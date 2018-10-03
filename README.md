@@ -11,3 +11,5 @@ An example how to use OpenSheetMusicDisplay with plain JS/HTML. http://opensheet
 * You should be able to load and see up to ten scores
 
 For a screenshot, see the [Wiki](https://github.com/opensheetmusicdisplay/RawJavascript-usage-example/wiki).
+
+Note that this example and especially the .js file could be done even more simply without the multiple file select feature.
