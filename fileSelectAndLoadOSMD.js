@@ -3,7 +3,6 @@ function handleFileSelect(evt) {
     var files = evt.target.files; // FileList object
     var osmdDisplays = Math.min(files.length, maxOSMDDisplays);
 
-    // files is a FileList of File objects. List some properties.
     var output = [];
     for (var i=0, file = files[i]; i<osmdDisplays; i++) {
       output.push("<li><strong>", escape(file.name), "</strong> </li>");
@@ -36,4 +35,4 @@ function handleFileSelect(evt) {
     }
   }
 
-  document.getElementById("files").addEventListener("change", handleFileSelect, false);
+document.getElementById("files").addEventListener("change", handleFileSelect, false);

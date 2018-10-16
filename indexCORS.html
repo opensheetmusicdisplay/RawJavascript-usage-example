@@ -1,0 +1,18 @@
+<html>
+<head>
+	<title> OSMD Raw Javascript Usage Example - CORS Version</title>
+</head>
+<body>
+
+<script src="opensheetmusicdisplay.min.js"></script> <!-- you need to provide the .js file, see README.md-->
+<div id="osmdCanvas"/>
+
+<!-- This example will likely fail due to CORS restrictions, see README-->
+<script>
+  var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  openSheetMusicDisplay.load("./resources/Saltarello_sample.musicxml");
+  openSheetMusicDisplay.render();
+</script>
+
+</body>
+</html>
