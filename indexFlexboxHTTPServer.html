@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+            }
+
+            #left {
+                background-color: #fdd;
+                flex-basis: 10rem;
+            }
+
+            #right {
+                background-color: #ddf;
+                flex-basis: auto;
+                flex-grow: 1;
+                flex-shrink: 1;
+				max-width: 97vw;
+            }
+        </style>
+        <script src="./opensheetmusicdisplay.min.js"></script>
+    </head>
+
+    <body>
+        <div id="left">Left</div>
+        <div id="right"></div>
+    </body>
+    <script>
+        var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("right");
+        osmd.load("http://localhost:8080/Saltarello_sample.musicxml").then(
+            function() {
+                osmd.zoom = 0.8;
+                osmd.render();
+                window.addEventListener("resize", () => {
+					osmd.render();
+				});
+        });
+    </script>
+</html>

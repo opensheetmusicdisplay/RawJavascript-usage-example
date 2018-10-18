@@ -18,6 +18,7 @@ The code becomes much simpler when not using a choose file dialogue:
 * Run `npm install http-server -g`.
 * Run `http-server ./resources -p 8080`
 * open `indexHTTPServer.html`
+Note: This may still cause CORS issues with Chrome, even with `http-server ̀--cors`. Try Firefox.
 The next section explains why we use a file server.
 
 ## File Loading
