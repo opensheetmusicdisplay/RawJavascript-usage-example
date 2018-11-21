@@ -7,7 +7,8 @@
 <script src="opensheetmusicdisplay.min.js"></script> <!-- you need to provide the .js file, see README.md-->
 <div id="osmdCanvas"/>
 
-<!-- This example will likely fail due to CORS restrictions, see README-->
+<!-- This example will fail due to CORS restrictions, see README -->
+<!-- You cannot just load local files in Javascript without user interaction. -->
 <script>
   var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
   openSheetMusicDisplay.load("./resources/Saltarello_sample.musicxml");

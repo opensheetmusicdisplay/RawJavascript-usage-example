@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title> OSMD Raw Javascript Usage Example - CORS Version</title>
+	<title> OSMD Raw Javascript Usage Example - HTTP Server Version</title>
 </head>
 <body>
 
@@ -11,13 +11,16 @@
 <div id="osmdCanvas"/>
 
 <script>
-  var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
-  openSheetMusicDisplay.load("http://localhost:8080/Saltarello_sample.musicxml").then(
-    function() {
-        openSheetMusicDisplay.render();
-    }
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  fetch('http://localhost:8080/Saltarello_sample.musicxml')
+  .then(response => response.text())
+  .then((text) => {
+    osmd.load(text);
+    osmd.render();
+  }
   );
 </script>
 
 </body>
 </html>
+
