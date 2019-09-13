@@ -20,11 +20,17 @@ function handleFileSelect(evt) {
 
       reader.onload = (function(theFile) {
         return function(e) {
-          var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+          var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas", {
+            // set options here
+            backend: "svg",
+            drawFromMeasureNumber: 1,
+            drawUpToMeasureNumber: Number.MAX_SAFE_INTEGER // draw all measures, up to the end of the sample
+          });
           openSheetMusicDisplay
             .load(e.target.result)
             .then(
               function() {
+                window.osmd = openSheetMusicDisplay; // give access to osmd object in Browser console, e.g. for osmd.setOptions()
                 //console.log("e.target.result: " + e.target.result);
                 openSheetMusicDisplay.render();
               }
