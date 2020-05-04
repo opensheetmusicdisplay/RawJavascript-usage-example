@@ -15,6 +15,7 @@ For a screenshot, see the [Wiki](https://github.com/opensheetmusicdisplay/RawJav
 
 ## Using a local server to serve files (node http-server)
 The code becomes much simpler when not using a choose file dialogue:
+* [Install npm](https://nodejs.org/en/download/), open a console/terminal window
 * Run `npm install http-server -g`.
 * Run `http-server ./resources -p 8080 --cors`
 * open `indexHTTPServer.html` or `indexHTTPServer-fetch.html` (alternative method)
