@@ -33,6 +33,8 @@ function handleFileSelect(evt) {
                 window.osmd = openSheetMusicDisplay; // give access to osmd object in Browser console, e.g. for osmd.setOptions()
                 //console.log("e.target.result: " + e.target.result);
                 openSheetMusicDisplay.render();
+                // osmd.cursor.show(); // this would show the cursor on the first note
+                // osmd.cursor.next(); // advance the cursor one note
               }
             );
         }
