@@ -14,6 +14,8 @@ An example how to use OpenSheetMusicDisplay with plain JS/HTML. http://opensheet
 
 For a screenshot, see the [Wiki](https://github.com/opensheetmusicdisplay/RawJavascript-usage-example/wiki).
 
+For more OSMD usage information, see the OSMD Wiki, specifically [Getting Started](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/wiki/Getting-Started).
+
 ## Using a local server to serve files (node http-server)
 The code becomes much simpler when not using a choose file dialogue:
 * [Install npm](https://nodejs.org/en/download/), open a console/terminal window
