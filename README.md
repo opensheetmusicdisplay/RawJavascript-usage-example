@@ -6,15 +6,19 @@ An example how to use OpenSheetMusicDisplay with plain JS/HTML. http://opensheet
 
 * Download an OSMD build (`opensheetmusicdisplay.min.js`) from our [Github Releases](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/releases)
   * put it in the same folder (where the index.html already is).
-* Open `index.html` with your browser of choice (we mostly use and support Chrome)
+  * note that some OSMD Builds < 0.8.2 had problems with FileReader, so please use 0.8.2 or later.
+* Open `index.html` with your browser of choice (we mostly use and support Chrome and Firefox)
   * Select a sample xml or musicxml file to load (we provide one in this repository)
   * You should be able to load and see up to ten scores
 * Alternatively, open indexSimpler.html, which is a bit simplified and only shows one score at a time.
 
 For a screenshot, see the [Wiki](https://github.com/opensheetmusicdisplay/RawJavascript-usage-example/wiki).
 
+For more OSMD usage information, see the OSMD Wiki, specifically [Getting Started](https://github.com/opensheetmusicdisplay/opensheetmusicdisplay/wiki/Getting-Started).
+
 ## Using a local server to serve files (node http-server)
 The code becomes much simpler when not using a choose file dialogue:
+* [Install npm](https://nodejs.org/en/download/), open a console/terminal window
 * Run `npm install http-server -g`.
 * Run `http-server ./resources -p 8080 --cors`
 * open `indexHTTPServer.html` or `indexHTTPServer-fetch.html` (alternative method)
