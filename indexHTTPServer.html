@@ -11,10 +11,10 @@
 <div id="osmdCanvas"/>
 
 <script>
-  var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
-  openSheetMusicDisplay.load("http://localhost:8080/Saltarello_sample.musicxml").then(
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  osmd.load("http://localhost:8080/Saltarello_sample.musicxml").then(
     function() {
-        openSheetMusicDisplay.render();
+      osmd.render();
     }
   );
 </script>

@@ -11,32 +11,30 @@ function handleFileSelect(evt) {
     document.getElementById("list").innerHTML = "<ul>" + output.join("") + "</ul>";
 
     for (var i=0, file = files[i]; i < osmdDisplays; i++) {
-      if (!file.name.match('.*\.xml') && !file.name.match('.*\.musicxml')) {
+      if (!file.name.match('.*\.xml') && !file.name.match('.*\.musicxml') && false) {
         alert('You selected a non-xml file. Please select only music xml files.');
         continue;
       }
 
       var reader = new FileReader();
 
-      reader.onload = (function(theFile) {
-        return function(e) {
-          var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas", {
+      reader.onload = function(e) {
+          var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas", {
             // set options here
             backend: "svg",
             drawFromMeasureNumber: 1,
             drawUpToMeasureNumber: Number.MAX_SAFE_INTEGER // draw all measures, up to the end of the sample
           });
-          openSheetMusicDisplay
+          osmd
             .load(e.target.result)
             .then(
               function() {
-                window.osmd = openSheetMusicDisplay; // give access to osmd object in Browser console, e.g. for osmd.setOptions()
+                window.osmd = osmd; // give access to osmd object in Browser console, e.g. for osmd.setOptions()
                 //console.log("e.target.result: " + e.target.result);
-                openSheetMusicDisplay.render();
+                osmd.render();
               }
             );
-        }
-      })(file);
+      };
       reader.readAsText(file);
     }
   }

@@ -10,9 +10,9 @@
 <!-- This example will fail due to CORS restrictions, see README -->
 <!-- You cannot just load local files in Javascript without user interaction. -->
 <script>
-  var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
-  openSheetMusicDisplay.load("./resources/Saltarello_sample.musicxml");
-  openSheetMusicDisplay.render();
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  osmd.load("./resources/Saltarello_sample.musicxml");
+  osmd.render();
 </script>
 
 </body>
