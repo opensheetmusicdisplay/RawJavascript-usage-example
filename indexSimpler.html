@@ -11,7 +11,7 @@
 <div id="list"></output>
 
 <script>
-  var openSheetMusicDisplay = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
   function handleFileSelect(evt) {
     var file = evt.target.files[0];
 
@@ -27,10 +27,10 @@
     var reader = new FileReader();
     reader.onload = (function(theFile) {
     return function(e) {
-      openSheetMusicDisplay.load(e.target.result).then(
+      osmd.load(e.target.result).then(
         function() {
           //console.log("e.target.result: " + e.target.result);
-          openSheetMusicDisplay.render();
+          osmd.render();
         }
       );
     }
