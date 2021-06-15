@@ -37,7 +37,12 @@ function handleFileSelect(evt) {
               }
             );
       };
-      reader.readAsText(file);
+      if (file.name.match('.*\.mxl')) {
+        // have to read as binary, otherwise JSZip will throw ("corrupted zip: missing 37 bytes" or similar)
+        reader.readAsBinaryString(file);
+      } else {
+        reader.readAsText(file);
+      }
     }
   }
 

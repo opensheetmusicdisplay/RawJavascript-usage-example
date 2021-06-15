@@ -8,7 +8,7 @@
 <script src="opensheetmusicdisplay.min.js"></script> <!-- you need to provide the .js file, see README.md-->
 <div id="osmdCanvas" style="width: 100%"/>
 
-<input type="file" id="fileInput" name="file"/>
+<input type="file" id="fileInput" name="file" formenctype="application/zip"/>
 
 <script>
   var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
@@ -29,7 +29,12 @@
         }
       );
     };
-    reader.readAsText(file);
+    if (file.name.match('.*\.mxl')) {
+      // have to read as binary, otherwise JSZip will throw ("corrupted zip: missing 37 bytes" or similar)
+      reader.readAsBinaryString(file);
+    } else {
+      reader.readAsText(file);
+    }
   }
 
   document.getElementById("fileInput").addEventListener("change", handleFileSelect, false);
