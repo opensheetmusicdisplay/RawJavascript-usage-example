@@ -12,6 +12,7 @@
 
 <script>
   var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
+  //osmd.TransposeCalculator = new opensheetmusicdisplay.TransposeCalculator(); // needs OSMD 1.0.0+
   function handleFileSelect(evt) {
     var file = evt.target.files[0];
 
@@ -25,6 +26,7 @@
       osmd.load(e.target.result).then(
         function() {
           //console.log("e.target.result: " + e.target.result);
+          // osmd.sheet.Transpose = 1;
           osmd.render();
         }
       );
