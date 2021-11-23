@@ -5,14 +5,14 @@
 </head>
 <body>
 
-<script src="opensheetmusicdisplay.min.js"></script> <!-- you need to provide the .js file, see README.md-->
+<script src="opensheetmusicdisplay.min.js"></script> <!-- you need to provide the .js file, see README.md -->
 <div id="osmdCanvas" style="width: 100%"/>
 
 <input type="file" id="fileInput" name="file" formenctype="application/zip"/>
 
 <script>
   var osmd = new opensheetmusicdisplay.OpenSheetMusicDisplay("osmdCanvas");
-  //osmd.TransposeCalculator = new opensheetmusicdisplay.TransposeCalculator(); // needs OSMD 1.0.0+
+  //osmd.TransposeCalculator = new opensheetmusicdisplay.TransposeCalculator(); // needs OSMD 1.0.0+, better 1.3.0+
   function handleFileSelect(evt) {
     var file = evt.target.files[0];
 
